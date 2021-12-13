@@ -26,18 +26,6 @@ todas_as_linhas.forEach(function (linha) {
   resultado3 = parseInt(resultado_arr_split[2]);
   resultado4 = parseInt(resultado_arr_split[3]);
   resultado5 = parseInt(resultado_arr_split[4]);
-  /*console.log(
-    concurso,
-    data,
-    resultado_arr_split[0],
-    resultado_arr_split[1],
-    resultado_arr_split[2],
-    resultado_arr_split[3],
-    resultado_arr_split[4]
-  )*/
-
-  //console.log("objeto: " + JSON.stringify(obj));
-  //arr.push(obj);
 
   $.ajax({
     type: "POST",
@@ -53,12 +41,13 @@ todas_as_linhas.forEach(function (linha) {
       resultado5: resultado5,
     },
     success: function (data) {
+      console.log("resposta arquivo salva.php: " + data);
       $("#Lista").append("<li>" + "concurso_string" + "</li>");
     },
   });
 });
 
-console.log(typeof concurso_string);
-console.log(typeof concurso_int);
+//console.log(typeof concurso_string);
+//console.log(typeof concurso_int);
 
 //console.log(arr);
